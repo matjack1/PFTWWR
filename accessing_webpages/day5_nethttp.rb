@@ -4,4 +4,4 @@ uri = URI('http://ruby-metaprogramming.rubylearning.com/html/ruby_metaprogrammin
 
 content = Net::HTTP.get(uri)
 
-puts "The number of occurrances of the is #{content.count("the")}"
+puts "The number of occurrances of the is #{content.scan(/(?:^|\s+)([Tt]he)(?:\s+|$)/).size}"
